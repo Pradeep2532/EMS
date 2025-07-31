@@ -5,6 +5,7 @@ const app = express();
 const cors = require('cors')
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const path = require('path');
 
 const corsOptions = {
   origin: 'http://localhost:5173', // Allow your frontend origin
