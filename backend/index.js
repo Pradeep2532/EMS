@@ -12,13 +12,18 @@ const corsOptions = {
   credentials: true,
   optionsSuccessStatus: 204 // For legacy browser support
 };
+app.use(cors(corsOptions))
+const PORT = process.env.PORT || 5000;
 
 const employeRouter = require("./routers/employeeRouter")
-const PORT = process.env.PORT || 5000;
-app.use(cors(corsOptions))
-
-
 app.use("/employee", employeRouter);
+
+// Serve frontend build
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
+});
 
 app.listen(PORT, () => {
   console.log(`App is running on port ${PORT}`);
