@@ -19,12 +19,6 @@ const PORT = process.env.PORT || 5000;
 const employeRouter = require("./routers/employeeRouter")
 app.use("/employee", employeRouter);
 
-// Serve frontend build
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-app.get("{*splat}", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist/index.html"));
-});
 
 app.listen(PORT, () => {
   console.log(`App is running on port ${PORT}`);
