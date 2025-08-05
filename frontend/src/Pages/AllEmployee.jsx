@@ -8,7 +8,7 @@ function AllEmployees() {
   // Fetches all employee records from the API
   const fetchAllEmployees = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:5000/employee/all",{withCredentials:true});
+      const response = await axios.get("https://ems-f5u0.onrender.com/employee/all",{withCredentials:true});
       // Ensure response.data.result is an array before setting state
       console.log("API Response:", response.data);
       if (Array.isArray(response.data.result)) {
@@ -27,7 +27,7 @@ function AllEmployees() {
     try {
       // Optional: Add a confirmation dialog for a better user experience
       if (window.confirm("Are you sure you want to delete this employee?")) {
-        await axios.delete(`http://127.0.0.1:5000/employee/delete/${id}`);
+        await axios.delete(`https://ems-f5u0.onrender.com/employee/delete/${id}`);
         fetchAllEmployees(); // Refresh the list after deletion
       }
     } catch (e) {

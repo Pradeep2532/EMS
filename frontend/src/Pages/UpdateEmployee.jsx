@@ -31,7 +31,7 @@ function EditEmployee() {
       setIsFetching(true); // Start loading
       try {
         const response = await axios.put(
-          `http://localhost:5000/employee/update/${id}`,{withCredentials:true}
+          `https://ems-f5u0.onrender.com/employee/update/${id}`,{withCredentials:true}
         );
         const { result } = response.data;
         // Populate the form with fetched data
@@ -66,7 +66,7 @@ function EditEmployee() {
     try {
       // Make a PUT request to update the record
       await axios.put(
-        `http://127.0.0.1:5000/employee/update/${id}`,
+        `https://ems-f5u0.onrender.com/employee/update/${id}`,
         updatedData,{withCredentials:true }
       );
 
