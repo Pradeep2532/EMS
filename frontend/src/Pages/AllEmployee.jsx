@@ -50,10 +50,10 @@ function AllEmployees() {
         </div>
 
         {/* This div makes the table scroll horizontally on small screens */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-left table-auto">
+        <div className="overflow-x-auto w-full ">
+          <table className="min-w-full text-left table-auto border-collapse">
             {/* Table Header */}
-            <thead className="bg-gray-200 text-gray-600 uppercase text-sm">
+            <thead className="bg-gray-200 text-gray-600 uppercase text-sm rounded-lg">
               <tr>
                 <th className="py-3 px-6">First Name</th>
                 <th className="py-3 px-6">Last Name</th>
